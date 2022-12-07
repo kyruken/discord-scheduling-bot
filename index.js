@@ -29,9 +29,11 @@ for (const file in commandFiles) {
     }
 
 }
-client.on("ready", () => {
-    console.log("Bot is online");
-})
+
+client.once(Events.ClientReady, c => {
+	console.log(`Ready! Logged in as ${c.user.tag}`);
+});
+
 
 // client.on("messageCreate", (message) => {
 //     if (!message.content.startsWith(prefix) || message.author.bot) return;
